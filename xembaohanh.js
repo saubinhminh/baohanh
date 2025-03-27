@@ -103,7 +103,7 @@ document.getElementById("viewButton").addEventListener("click", async function (
 
     if (fileLink) {
         console.log("✅ File tìm thấy! Mở ngay trên trang:", fileLink);
-        window.open(fileLink, "_blank");
+        window.location.href = fileLink;
     } else {
         alert("❌ Không tìm thấy phiếu bảo hành!");
     }
