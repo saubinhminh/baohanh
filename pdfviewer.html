@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem PDF</title>
+    <style>
+        body, html { margin: 0; height: 100%; overflow: hidden; }
+        embed { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const file = urlParams.get('file');
+        if (file) {
+            document.write(`<embed src="${file}" type="application/pdf">`);
+        } else {
+            document.write("<p>Lỗi: Không tìm thấy file PDF!</p>");
+        }
+    </script>
+</body>
+</html>
