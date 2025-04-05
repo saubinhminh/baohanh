@@ -72,5 +72,23 @@
     </div>
 
     <script src="xembaohanh.js"></script>
+
+<script>
+document.getElementById("viewButton").addEventListener("click", function () {
+    const phone = document.getElementById("phoneNumber").value.trim();
+    if (!phone) {
+        alert("Vui lòng nhập số điện thoại");
+        return;
+    }
+
+    const fileName = phone + ".pdf";
+    const currentPath = location.href.substring(0, location.href.lastIndexOf("/") + 1);
+    const fileURL = currentPath + fileName;
+    const viewerURL = "https://docs.google.com/gview?embedded=true&url=" + encodeURIComponent(fileURL);
+
+    window.open(viewerURL, "_blank");
+});
+</script>
+
 </body>
 </html>
